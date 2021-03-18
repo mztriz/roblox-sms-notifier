@@ -7,8 +7,10 @@ playerids = [""]
 while True:
     for playerid in playerids:
         if is_online(playerid):
-                print(f"Player {playerid} is online")
-                send_sms(playerid)
-                playerids.remove(playerid)
+            print(f"Player {playerid} is online")
+            send_sms(playerid)
+            playerids.remove(playerid)
+        elif is_online(playerid)!=True:
+            playerids.append(playerid)
         else:
             pass
